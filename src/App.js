@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import Globalize from 'globalize';
+
+import 'devextreme/dist/css/dx.common.css';
+import 'devextreme/dist/css/dx.light.compact.css';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+import DocumentSelector from './DocumentSelector';
+import { ReportServerProvider } from './ReportServerContext';
+import ReportServerDocumentViewer from './ReportServerDocumentViewer';
+
+const App = () => {
+  Globalize.load(
+    require('devextreme-cldr-data/en.json'),
+    require('devextreme-cldr-data/supplemental.json')
   );
-}
+  Globalize.locale('en');
+
+  const [document, setDocument] = useState(-1);
+
+  return (
+    <ReportServerProvider
+      serviceBaseUrl="https://reportserver.devexpress.com"
+      username="Guest"
+      password=""
+    >
+      <DocumentSelector documentSelected={setDocument} />
+      <ReportServerDocumentViewer document={document || {}} />
+    </ReportServerProvider>
+  );
+};
 
 export default App;

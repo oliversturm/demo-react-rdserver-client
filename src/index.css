@@ -1,13 +1,7 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
+@import url('../node_modules/jquery-ui/themes/base/all.css');
+@import url('../node_modules/devextreme/dist/css/dx.common.css');
+@import url('../node_modules/devextreme/dist/css/dx.light.css');
+@import url('../node_modules/@devexpress/analytics-core/dist/css/dx-analytics.common.css');
+@import url('../node_modules/@devexpress/analytics-core/dist/css/dx-analytics.light.css');
+@import url('../node_modules/@devexpress/analytics-core/dist/css/dx-querybuilder.css');
+@import url('../node_modules/devexpress-dashboard/dist/css/dx-dashboard.light.css');

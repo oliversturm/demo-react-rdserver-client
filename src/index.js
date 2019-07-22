@@ -1,6 +1,8 @@
+import 'react-app-polyfill/ie11';
+import 'react-app-polyfill/stable';
+import 'url-search-params-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import 'url-search-params-polyfill';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
